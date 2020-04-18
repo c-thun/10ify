@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 PICTURES_FOLDER=$(xdg-user-dir PICTURES)
-sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev
+
+#-- Install Dependencies  ------------------------------------
+echo "Installing Dependencies";
+sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev;
+
+#-- Remove Ubuntu nonsense ------------------------------------
+gnome-extensions disable "ubuntu-dock@ubuntu.com";
+
+echo "Installing Extensions"
 
 #-- Install Animation Tweaks  ------------------------------------
 git clone "https://github.com/Selenium-H/Animation-Tweaks.git";
@@ -23,6 +31,7 @@ gnome-extensions enable "arc-menu@linxgem33.com";
 #-- Install User Themes  ------------------------------------
 gnome-extensions enable "user-theme@gnome-shell-extensions.gcampax.github.com";
 
+echo "Changing Themes and Icons"
 #-- Windows 10 Icons, Wallpaper and Theme ------------------------------------
 [[ -e ~/.local/share/themes ]] || mkdir -p ~/.local/share/themes
 [[ -e ~/.local/share/icons ]] || mkdir -p ~/.local/share/icons
