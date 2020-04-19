@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 PICTURES_FOLDER=$(xdg-user-dir PICTURES)
-CURR_DIRR=$(pwd)
 
 #-- Install Dependencies  ------------------------------------
 echo "Installing Dependencies";
 sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev;
+
+mv icons8-windows-10-symbolic.svg ~/icons8-windows-10-symbolic.svg
 
 #-- Remove Ubuntu nonsense ------------------------------------
 gnome-extensions disable "ubuntu-dock@ubuntu.com";
@@ -39,8 +40,8 @@ echo "Changing Themes and Icons"
 #-- Windows 10 Icons, Wallpaper and Theme ------------------------------------
 [[ -e ~/.local/share/themes ]] || mkdir -p ~/.local/share/themes
 [[ -e ~/.local/share/icons ]] || mkdir -p ~/.local/share/icons
-wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg "$CURR_DIR"/wallpaper-windows.png
-gsettings set org.gnome.desktop.background picture-uri file:///"$CURR_DIR"/wallpaper-windows.png
+wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg ~/wallpaper-windows.png
+gsettings set org.gnome.desktop.background picture-uri ~/wallpaper-windows.png
 
 #-- Copy schemas ------------------------------------
 sudo cp ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas/org.gnome.shell.extensions.arc-menu.gschema.xml /usr/share/glib-2.0/schemas/
@@ -270,7 +271,7 @@ gsettings set org.gnome.shell.extensions.arc-menu ubuntu-dash-separator-index 5
 gsettings set org.gnome.shell.extensions.arc-menu activate-on-hover true
 gsettings set org.gnome.shell.extensions.arc-menu multi-monitor true
 gsettings set org.gnome.shell.extensions.arc-menu enable-custom-arc-menu true
-gsettings set org.gnome.shell.extensions.arc-menu custom-menu-button-icon 'icons8-windows-10-symbolic.svg'
+gsettings set org.gnome.shell.extensions.arc-menu custom-menu-button-icon ~/icons8-windows-10-symbolic.svg
 gsettings set org.gnome.shell.extensions.arc-menu menu-arrow-size 0
 gsettings set org.gnome.shell.extensions.arc-menu menu-keybinding-text '<Super>x'
 gsettings set org.gnome.shell.extensions.arc-menu menu-corner-radius 5
