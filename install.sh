@@ -39,8 +39,7 @@ echo "Changing Themes and Icons"
 #-- Windows 10 Icons, Wallpaper and Theme ------------------------------------
 [[ -e ~/.local/share/themes ]] || mkdir -p ~/.local/share/themes
 [[ -e ~/.local/share/icons ]] || mkdir -p ~/.local/share/icons
-wget -N https://github.com/B00merang-Project/Windows-10/archive/master.zip && unzip -o master.zip -d ~/.local/share/themes/
-wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg wallpaper-windows.png
+wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg "$CURR_DIR"/wallpaper-windows.png
 gsettings set org.gnome.desktop.background picture-uri file:///"$CURR_DIR"/wallpaper-windows.png
 
 #-- Copy schemas ------------------------------------
@@ -259,9 +258,6 @@ gsettings set org.gnome.shell.extensions.dash-to-panel trans-use-custom-opacity 
 
 #-- Configure User Theme  ------------------------------------
 gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
-gsettings set org.gnome.desktop.interface icon-theme "Windows-10-Icons-master"
-gsettings set org.gnome.desktop.interface gtk-theme "Windows-10-master"
-gsettings set org.gnome.shell.extensions.user-theme name "Windows-10-master"
 
 #-- Configure Arc Menu  ------------------------------------
 gsettings set org.gnome.shell.extensions.arc-menu enable-custom-shortcuts false
