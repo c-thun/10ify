@@ -1,10 +1,22 @@
 # 10ify
-A collection of extensions and tweaks to make your GNOME Shell look like Windows 10 (along with animation tweaks for the complete experience). For more clarity on the steps, have a look at the Screenshots section beforehand
+A collection of extensions and tweaks to make your GNOME Shell look like Windows 10 (along with animation tweaks for the complete experience). For more clarity on the steps, have a look at the Screenshots section beforehand. 
+
+## Supported Operating Systems : 
+
+This script supports the following operating systems - 
+* Ubuntu
+* Fedora
+* Debian
 
 ## Dependencies :
-In order to run the script you need to install git. This can be done by -
+
+In order to run the script you need to install git. For Ubuntu and Debian users, this can be done by -
 
 ``` sudo apt install git ```
+
+For Fedora users, this can be done by - 
+
+``` sudo dnf install git ```
 
 ## Setting Up : 
 
@@ -33,7 +45,8 @@ If you wish to undo all the changes done by the install script, you can do so by
 ``` ./uninstall.sh ```
 
 ## Screenshots :
-We start off with the original Ubuntu look...
+
+We start off with the original look...
 
 ![](Screenshots/orig_1.png)
 
@@ -43,11 +56,11 @@ Now, we follow the steps one by one as shown
 
 ![](Screenshots/step_1.png)
 
-#### Step 2 : Type in all the commands one by one
+#### Step 2 : Type in all the commands one by one (depending on your OS)
 
 ![](Screenshots/step_3.png)
 
-#### Step 3 : Choose your theme! This will change your icons, shell, and application theme based on your choice
+#### Step 3 : Choose your theme! This will change your icons, shell, and application theme based on your choice. More themes will be added with time :)
 
 ![](Screenshots/step_4a.png)
 
@@ -55,7 +68,7 @@ Now, we follow the steps one by one as shown
 
 ![](Screenshots/step_4b.png)
 
-#### Step 5 : The script has completed! All you need to do now is either re-login (after logging out) or restart the shell by  pressing Alt+F2 and then typing in r
+#### Step 5 : The script has completed! All you need to do now is either re-login (after logging out) or restart the shell by  pressing Alt+F2 and then typing in r (this only works in Xorg sessions, which Ubuntu uses by Default). Fedora and Debian use Wayland by default and thus cannot restart shell by this method. For Wayland users, the recommendation is to logout and re-login. 
 
 ![](Screenshots/finne.png)
 
@@ -63,7 +76,7 @@ Now, we follow the steps one by one as shown
 
 ![](Screenshots/step_6.png)
 
-#### Step 7 : All done! Enjoy your new Ubuntu experience 
+#### Step 7 : All done! Enjoy your new experience 
 
 ![](Screenshots/finne_2.png)
 
