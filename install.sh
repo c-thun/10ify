@@ -26,7 +26,7 @@ case "$distro" in
    sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev zenity;
    } > /dev/null 2>&1
    ;;
-   mint*)    
+   pop*)    
    {
    sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev zenity;
    } > /dev/null 2>&1
