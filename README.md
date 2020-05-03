@@ -5,13 +5,13 @@ A collection of extensions and tweaks to make your GNOME Shell look like Windows
 
 This script supports the following operating systems - 
 * Ubuntu 
-* Ubuntu based distros : PopOS!, Linux Mint, etc.
+* PopOS!
 * Fedora
 * Debian
 
 ## Dependencies :
 
-In order to run the script you need to install git. For Ubuntu, Ubuntu based distros and Debian users, this can be done by -
+In order to run the script you need to install git. For Ubuntu, PopOS! and Debian users, this can be done by -
 
 ``` sudo apt install git ```
 
