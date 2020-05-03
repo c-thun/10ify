@@ -41,19 +41,30 @@ Now, we follow the steps one by one as shown
 
 ![](Screenshots/step_3.png)
 
-#### Step 3 : The script has completed! All you need to do now is either re-login (after logging out) or restart the shell by  pressing Alt+F2 and then typing in r
+#### Step 3 : Choose your theme! This will change your icons, shell, and application theme based on your choice
 
-![](Screenshots/step_5.png)
+![](Screenshots/step_4a.png)
 
-#### Step 4 : In case you decide to restart the shell by  pressing Alt+F2 and then typing in r, this is how it should look
+#### Step 4 : Upon completion, you will see this dialogue. Click okay to proceed.
+
+![](Screenshots/step_4b.png)
+
+#### Step 5 : The script has completed! All you need to do now is either re-login (after logging out) or restart the shell by  pressing Alt+F2 and then typing in r
+
+![](Screenshots/finne.png)
+
+#### Step 6 : In case you decide to restart the shell by  pressing Alt+F2 and then typing in r, this is how it should look
 
 ![](Screenshots/step_6.png)
 
-#### Step 5 : All done! Enjoy your new Ubuntu experience 
-
-![](Screenshots/finne.png)
+#### Step 7 : All done! Enjoy your new Ubuntu experience 
 
 ![](Screenshots/finne_2.png)
 
 
+## Credits :
 
+Due credits go to the following (none of the icons/styling belong to me and are used from the following sources) : 
+
+* [B00merang-Project](https://github.com/B00merang-Project) for providing the shell and application themes. 
+* [We10X Theme Creators](https://github.com/yeyushengfan258/We10X-icon-theme)
