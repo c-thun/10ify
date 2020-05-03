@@ -41,15 +41,11 @@ Now, we follow the steps one by one as shown
 
 ![](Screenshots/step_3.png)
 
-#### Step 3 : Midway during the script you will be asked to confirm a change. Press 'y' to proceed with the changes
-
-![](Screenshots/step_4.png)
-
-#### Step 4 : The script has completed! All you need to do now is either re-login (after logging out) or restart the shell by  pressing Alt+F2 and then typing in r
+#### Step 3 : The script has completed! All you need to do now is either re-login (after logging out) or restart the shell by  pressing Alt+F2 and then typing in r
 
 ![](Screenshots/step_5.png)
 
-#### Step 4B : In case you decide to restart the shell by  pressing Alt+F2 and then typing in r, this is how it should look
+#### Step 4 : In case you decide to restart the shell by  pressing Alt+F2 and then typing in r, this is how it should look
 
 ![](Screenshots/step_6.png)
 
