@@ -336,7 +336,7 @@ gsettings set org.gnome.shell.extensions.arc-menu menu-color 'rgb(46,52,54)'
 gsettings set org.gnome.shell.extensions.arc-menu menu-foreground-color 'rgb(238,238,236)'
 gsettings set org.gnome.shell.extensions.arc-menu arc-menu-placement 'DTP'
 gsettings set org.gnome.shell.extensions.arc-menu menu-hotkey 'Super_L'
-gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(255,255,255)'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(45,138,217)'
 gsettings set org.gnome.shell.extensions.arc-menu custom-menu-button-icon-size 25.0
 gsettings set org.gnome.shell.extensions.arc-menu enable-sub-menus true
 gsettings set org.gnome.shell.extensions.arc-menu highlight-color 'rgb(41,50,55)'
