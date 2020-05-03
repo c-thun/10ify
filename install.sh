@@ -3,9 +3,42 @@ PICTURES_FOLDER=$(xdg-user-dir PICTURES)
 
 #-- Install Dependencies  ------------------------------------
 echo "Installing Dependencies...";
-{
-sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev zenity;
-} > /dev/null 2>&1
+
+if type lsb_release >/dev/null 2>&1 ; then
+   distro=$(lsb_release -i -s)
+elif [ -e /etc/os-release ] ; then
+   distro=$(awk -F= '$1 == "ID" {print $2}' /etc/os-release)
+elif [ -e /etc/some-other-release-file ] ; then
+   distro=$(ihavenfihowtohandleotherhypotheticalreleasefiles)
+fi
+
+# convert to lowercase
+distro=$(printf '%s\n' "$distro" | LC_ALL=C tr '[:upper:]' '[:lower:]')
+# now do different things depending on distro
+case "$distro" in
+   debian*)   
+   {
+   sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev zenity;
+   } > /dev/null 2>&1
+   ;;
+   ubuntu*) 
+   {
+   sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev zenity;
+   } > /dev/null 2>&1
+   ;;
+   mint*)    
+   {
+   sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev zenity;
+   } > /dev/null 2>&1
+   ;;
+   fedora*)  
+   {
+   sudo dnf install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext zenity;
+   } > /dev/null 2>&1
+   ;;
+   *)        echo "Distro '$distro' not supported"; exit 1 ;;
+esac
+
 
 echo "Setting Up Basic Files...";
 {
