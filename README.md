@@ -26,6 +26,12 @@ Do not run the last command under sudo and whenever it asks for password, input 
 That's it! You will not see results instantly. Once the script has finished executing, simply logout and re-login to see the changes complete.
 Alternately, if you are using an XOrg session (which is the default in Ubuntu), simply press Alt+F2 and in the dialog box that appears, press r. 
 
+If you wish to undo all the changes done by the install script, you can do so by running the following commands - 
+
+``` chmod +x uninstall.sh ```
+
+``` ./uninstall.sh ```
+
 ## Screenshots :
 We start off with the original Ubuntu look...
 
