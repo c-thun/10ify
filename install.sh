@@ -4,7 +4,7 @@ PICTURES_FOLDER=$(xdg-user-dir PICTURES)
 #-- Install Dependencies  ------------------------------------
 echo "Installing Dependencies...";
 {
-sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev;
+sudo apt install apt -y make gnome-shell-extensions gnome-tweak-tool gnome-menus gettext libgettextpo-dev zenity;
 } > /dev/null 2>&1
 
 echo "Setting Up Basic Files...";
@@ -47,19 +47,69 @@ cd ..
 } > /dev/null 2>&1
 
 #-- Install User Themes  ------------------------------------
-echo "Enabling Themes...";
 {
 gnome-extensions enable "user-theme@gnome-shell-extensions.gcampax.github.com";
 } > /dev/null 2>&1
 
 #-- Windows 10 Icons, Wallpaper and Theme ------------------------------------
-echo "Changing Themes and Icons...";
+echo "Modifying the look and feel";
 {
 [[ -e ~/.local/share/themes ]] || mkdir -p ~/.local/share/themes
 [[ -e ~/.local/share/icons ]] || mkdir -p ~/.local/share/icons
+
+git clone "https://github.com/yeyushengfan258/We10X-icon-theme.git";
+cd "We10X-icon-theme/";
+./install.sh;
+cd ..;
+
+} > /dev/null 2>&1
+
+title="Theme Picker"
+prompt="Choose your look and feel style:"
+options=("Windows 10 - Dark" "Windows 10 - Light" "Ubuntu - Dark" "Ubuntu")
+
+opt=$(zenity --title="$title" --text="$prompt" --list \
+                    --column="Options" "${options[@]}");
+
+case "$opt" in
+"${options[0]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "We10X-dark"
+git clone "https://github.com/B00merang-Project/Windows-10-Dark.git"
+mv Windows-10-Dark/ ~/.local/share/themes/
+gsettings set org.gnome.desktop.interface gtk-theme "Windows-10-Dark";
+gsettings set org.gnome.shell.extensions.user-theme name "Yaru-dark";
 wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg ~/wallpaper-windows.png
 gsettings set org.gnome.desktop.background picture-uri ~/wallpaper-windows.png
 } > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+"${options[1]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "We10X"
+git clone "https://github.com/B00merang-Project/Windows-10.git"
+mv Windows-10/ ~/.local/share/themes/;
+gsettings set org.gnome.desktop.interface gtk-theme "Windows-10";
+gsettings set org.gnome.shell.extensions.user-theme name "Yaru";
+wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg ~/wallpaper-windows.png
+gsettings set org.gnome.desktop.background picture-uri ~/wallpaper-windows.png
+} > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+"${options[2]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "Yaru"
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark";
+gsettings set org.gnome.shell.extensions.user-theme name "Yaru-dark";
+} > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+"${options[3]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "Yaru";
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru";
+gsettings set org.gnome.shell.extensions.user-theme name "Yaru";
+} > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+*) zenity --error --text="Invalid option. Try another one.";;
+esac
 
 #-- Copy schemas ------------------------------------
 echo "Copying schemas...";
