@@ -84,6 +84,31 @@ cd ..
 gnome-extensions enable "user-theme@gnome-shell-extensions.gcampax.github.com";
 } > /dev/null 2>&1
 
+#-- Install Horizontal Workspaces  ------------------------------------
+{
+gnome-extensions enable "horizontal-workspaces@gnome-shell-extensions.gcampax.github.com";
+} > /dev/null 2>&1
+
+# -- For Wayland users, enable Extended Gestures  ------------------------------------ 
+{
+if [ $XDG_SESSION_TYPE == "wayland" ]; then
+   git clone "https://github.com/mpiannucci/gnome-shell-extended-gestures";
+   cp -r gnome-shell-extended-gestures/extendedgestures@mpiannucci.github.com ~/.local/share/gnome-shell/extensions
+else
+   echo "You are using an X11 session. Gestures not supported."
+fi
+} > /dev/null 2>&1
+
+#-- Copy schemas ------------------------------------
+echo "Copying schemas...";
+{
+sudo cp ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas/org.gnome.shell.extensions.arc-menu.gschema.xml /usr/share/glib-2.0/schemas/
+sudo cp ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas/org.gnome.shell.extensions.dash-to-panel.gschema.xml /usr/share/glib-2.0/schemas/
+sudo cp ~/.local/share/gnome-shell/extensions/animation-tweaks@Selenium-H/schemas/org.gnome.shell.extensions.animation-tweaks.gschema.xml /usr/share/glib-2.0/schemas/
+
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+} > /dev/null 2>&1
+
 #-- Windows 10 Icons, Wallpaper and Theme ------------------------------------
 echo "Modifying the look and feel";
 {
@@ -99,7 +124,7 @@ cd ..;
 
 title="Theme Picker"
 prompt="Choose your look and feel style:"
-options=("Windows 10 - Dark" "Windows 10 - Light" "Ubuntu - Dark" "Ubuntu")
+options=("Windows 10 - Dark" "Windows 10 - Light" "Ubuntu - Dark" "Ubuntu" "Fedora - Dark" "Fedora" "Debian - Dark" "Debian")
 
 opt=$(zenity --title="$title" --text="$prompt" --list \
                     --column="Options" "${options[@]}");
@@ -114,6 +139,8 @@ gsettings set org.gnome.desktop.interface gtk-theme "Windows-10-Dark";
 gsettings set org.gnome.shell.extensions.user-theme name "Yaru-dark";
 wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg ~/wallpaper-windows.png
 gsettings set org.gnome.desktop.background picture-uri ~/wallpaper-windows.png
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Custom_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(45,138,217)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[1]}" ) 
@@ -125,6 +152,8 @@ gsettings set org.gnome.desktop.interface gtk-theme "Windows-10";
 gsettings set org.gnome.shell.extensions.user-theme name "Yaru";
 wget https://cdn.wallpaperhub.app/cloudcache/7/c/2/f/3/4/7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg && mv 7c2f345bdfcadb8a3faf483ebaa2e9aea712bbdb.jpg ~/wallpaper-windows.png
 gsettings set org.gnome.desktop.background picture-uri ~/wallpaper-windows.png
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Custom_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(45,138,217)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[2]}" ) 
@@ -132,6 +161,9 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Yaru"
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark";
 gsettings set org.gnome.shell.extensions.user-theme name "Yaru-dark";
+org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+org.gnome.shell.extensions.arc-menu distro-icon 'Ubuntu'
+org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(206,92,0)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[3]}" ) 
@@ -139,20 +171,53 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Yaru";
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru";
 gsettings set org.gnome.shell.extensions.user-theme name "Yaru";
+org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+org.gnome.shell.extensions.arc-menu distro-icon 'Ubuntu'
+org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(206,92,0)'
+} > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+"${options[4]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark";
+gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark";
+org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+org.gnome.shell.extensions.arc-menu distro-icon 'Fedora'
+org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(114,159,207)'
+} > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+"${options[5]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita";
+gsettings set org.gnome.shell.extensions.user-theme name "Adwaita";
+org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+org.gnome.shell.extensions.arc-menu distro-icon 'Fedora'
+org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(114,159,207)'
+} > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+"${options[6]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark";
+gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark";
+org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+org.gnome.shell.extensions.arc-menu distro-icon 'Debian'
+org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(164,0,0)'
+} > /dev/null 2>&1
+zenity --info --text="Theme $opt set";;
+"${options[7]}" ) 
+{
+gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark";
+gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark";
+org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+org.gnome.shell.extensions.arc-menu distro-icon 'Debian'
+org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(164,0,0)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 *) zenity --error --text="Invalid option. Try another one.";;
 esac
-
-#-- Copy schemas ------------------------------------
-echo "Copying schemas...";
-{
-sudo cp ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas/org.gnome.shell.extensions.arc-menu.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas/org.gnome.shell.extensions.dash-to-panel.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp ~/.local/share/gnome-shell/extensions/animation-tweaks@Selenium-H/schemas/org.gnome.shell.extensions.animation-tweaks.gschema.xml /usr/share/glib-2.0/schemas/
-
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
-} > /dev/null 2>&1
 
 #-- Finally set custom settings ------------------------------------
 
@@ -336,7 +401,6 @@ gsettings set org.gnome.shell.extensions.arc-menu menu-color 'rgb(46,52,54)'
 gsettings set org.gnome.shell.extensions.arc-menu menu-foreground-color 'rgb(238,238,236)'
 gsettings set org.gnome.shell.extensions.arc-menu arc-menu-placement 'DTP'
 gsettings set org.gnome.shell.extensions.arc-menu menu-hotkey 'Super_L'
-gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(45,138,217)'
 gsettings set org.gnome.shell.extensions.arc-menu custom-menu-button-icon-size 25.0
 gsettings set org.gnome.shell.extensions.arc-menu enable-sub-menus true
 gsettings set org.gnome.shell.extensions.arc-menu highlight-color 'rgb(41,50,55)'
@@ -382,7 +446,7 @@ gsettings set org.gnome.shell.extensions.arc-menu enable-weather-widget-ubuntu f
 gsettings set org.gnome.shell.extensions.arc-menu restore-activities-button false
 gsettings set org.gnome.shell.extensions.arc-menu override-hot-corners false
 gsettings set org.gnome.shell.extensions.arc-menu enable-ubuntu-homescreen true
-gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Custom_Icon'
+
 } > /dev/null 2>&1
 
 #-- Configure Animations ------------------------------------
