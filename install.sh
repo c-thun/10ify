@@ -489,5 +489,20 @@ gsettings set org.gnome.shell.extensions.animation-tweaks modaldialog-close "['|
 gsettings set org.gnome.shell.extensions.animation-tweaks window-minimize-effects-list "['|', 'Contracted Drop Down', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', 'MW', 'MH', 'MX', '1.2', '0.200', '0', '0', '255', 'MW', 'MH', 'MX', 'DY', '|', 'Contracted Drop Left', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', 'MW', 'MH', '1.8', 'MY', '0.200', '0', '0', '255', 'MW', 'MH', 'LX', 'MY', '|', 'Contracted Drop Right', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', 'MW', 'MH', '1.2', 'MY', '0.200', '0', '0', '255', 'MW', 'MH', 'RX', 'MY', '|', 'Contracted Drop Up', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', 'MW', 'MH', 'MX', '1.8', '0.200', '0', '0', '255', 'MW', 'MH', 'MX', 'UY', '|', 'Fade Out', '1', '255', '1', '1', '1', '1', '0.350', '0', '0', '0', '0.99', '0.99', '1', '1', '|', 'Fold In Sideways', '1', '255', '1', '1', '1', '1', '0.250', '0.5', '0', '100', '0', '1', '1', '1', '|', 'Fold In Vertically', '1', '255', '1', '1', '1', '1', '0.250', '0', '0.5', '100', '1', '0', '1', '1', '|', 'Magnify', '1', '255', '1', '1', '1', '1', '0.250', '0.5', '0.5', '0', '1.2', '1.2', '1', '1', '|', 'Scale Down', '1', '255', '1', '1', '1', '1', '0.250', '0', '1', '0', '1', '0', '1', '1', '|', 'Scale Left', '1', '255', '1', '1', '1', '1', '0.250', '0', '0', '0', '0', '1', '1', '1', '|', 'Scale Right', '1', '255', '1', '1', '1', '1', '0.250', '1', '0', '0', '0', '1', '1', '1', '|', 'Scale Up', '1', '255', '1', '1', '1', '1', '0.250', '0', '0', '0', '1', '0', '1', '1', '|', 'Slide Down', '1', '255', '1', '1', '1', '1', '0.350', '0', '0', '0', '1', '1', '1', '1.2', '|', 'Slide Left', '1', '255', '1', '1', '1', '1', '0.350', '0', '0', '0', '1', '1', '0.8', '1', '|', 'Slide Right', '1', '255', '1', '1', '1', '1', '0.350', '0', '0', '0', '1', '1', '1.2', '1', '|', 'Slide Up', '1', '255', '1', '1', '1', '1', '0.350', '0', '0', '0', '1', '1', '1', '0.8', '|', 'Squeezed Slide Down', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', 'MW', '0.8', 'MX', '1', '0.200', '0', '0', '255', 'MW', '0.8', 'MX', 'DY', '|', 'Squeezed Slide Left', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', '0.8', 'MH', '1', 'MY', '0.200', '0', '0', '255', '0.8', 'MH', 'LX', 'MY', '|', 'Squeezed Slide Right', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', '0.8', 'MH', '1', 'MY', '0.200', '0', '0', '255', '0.8', 'MH', 'RX', 'MY', '|', 'Squeezed Slide Up', '2', '255', '1', '1', 'SX', 'SY', '0.300', '0', '0', '255', 'MW', '0.8', 'MX', '1', '0.200', '0', '0', '255', 'MW', '0.8', 'MX', 'UY', '|', 'Zoom Out', '1', '255', '1', '1', '1', '1', '0.250', '0.5', '0.5', '0', '0', '0', '1', '1', '|', 'None', '1', '255', '1', '1', '1', '1', '0.0', '0', '0', '0', '1', '1', '1', '1']"
 } > /dev/null 2>&1
 
+#-- Configure Extended Gestures ------------------------------------
+echo "Configuring Gestures...";
+{
+gsettings set org.gnome.shell.extensions.extendedgestures right-three-action 'previous-workspace'
+gsettings set org.gnome.shell.extensions.extendedgestures left-three-action 'next-workspace'
+gsettings set org.gnome.shell.extensions.extendedgestures right-three-swipes false
+gsettings set org.gnome.shell.extensions.extendedgestures left-three-swipes false
+gsettings set org.gnome.shell.extensions.extendedgestures horizontal-sensitivity-adjustment 0
+gsettings set org.gnome.shell.extensions.extendedgestures down-three-swipes true
+gsettings set org.gnome.shell.extensions.extendedgestures up-three-action 'overview'
+gsettings set org.gnome.shell.extensions.extendedgestures up-three-swipes true
+gsettings set org.gnome.shell.extensions.extendedgestures down-three-action 'overview'
+gsettings set org.gnome.shell.extensions.extendedgestures vertical-sensitivity-adjustment 0
+} > /dev/null 2>&1
+
 echo "All Done!";
 echo "Logout and re-login for changes to take effect";
