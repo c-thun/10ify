@@ -5,6 +5,8 @@ echo "Removing items added by script...";
 gnome-extensions disable "animation-tweaks@Selenium-H";
 gnome-extensions disable "dash-to-panel@jderose9.github.com";
 gnome-extensions disable "arc-menu@linxgem33.com";
+gnome-extensions disable "horizontal-workspaces@gnome-shell-extensions.gcampax.github.com";
+
 } > /dev/null 2>&1
 
 echo "Restoring default looks...";

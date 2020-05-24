@@ -94,6 +94,7 @@ gnome-extensions enable "horizontal-workspaces@gnome-shell-extensions.gcampax.gi
 if [ $XDG_SESSION_TYPE == "wayland" ]; then
    git clone "https://github.com/mpiannucci/gnome-shell-extended-gestures";
    cp -r gnome-shell-extended-gestures/extendedgestures@mpiannucci.github.com ~/.local/share/gnome-shell/extensions
+   gnome-extensions enable "extendedgestures@mpiannucci.github.com"
 else
    echo "You are using an X11 session. Gestures not supported."
 fi
@@ -105,7 +106,7 @@ echo "Copying schemas...";
 sudo cp ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas/org.gnome.shell.extensions.arc-menu.gschema.xml /usr/share/glib-2.0/schemas/
 sudo cp ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas/org.gnome.shell.extensions.dash-to-panel.gschema.xml /usr/share/glib-2.0/schemas/
 sudo cp ~/.local/share/gnome-shell/extensions/animation-tweaks@Selenium-H/schemas/org.gnome.shell.extensions.animation-tweaks.gschema.xml /usr/share/glib-2.0/schemas/
-
+sudo cp ~/.local/share/gnome-shell/extensions/extendedgestures@mpiannucci.github.com/schemas/org.gnome.shell.extensions.extendedgestures.gschema.xml /usr/share/glib-2.0/schemas/
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 } > /dev/null 2>&1
 
