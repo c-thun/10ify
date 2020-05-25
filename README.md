@@ -61,7 +61,7 @@ Now, we follow the steps one by one as shown
 
 ![](Screenshots/step_3.png)
 
-#### Step 3 : Choose your theme! This will change your icons, shell, and application theme based on your choice. More themes will be added with time :)
+#### Step 3 : Choose your theme! This will change your icons, shell, and application theme based on your choice. Note that choosing the Ubuntu-* themes require Yaru and Yaru-dark themes to be already present on your distro (so should work with default Ubuntu) and Fedora-* and Debian-* themes require  Adwaita and Adwaita-dark themes to be already present on your distro (so should work with every distro using default GNOME session). The fixes for these could be to manually install these themes but it would make the script heavier and slower. I might add this change later on. The Windows-* themes will work perfectly regardless of what themes are already installed.
 
 ![](Screenshots/step_4a.png)
 
