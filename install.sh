@@ -162,9 +162,9 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Yaru"
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark";
 gsettings set org.gnome.shell.extensions.user-theme name "Yaru-dark";
-org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
-org.gnome.shell.extensions.arc-menu distro-icon 'Ubuntu'
-org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(206,92,0)'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu distro-icon 'Ubuntu'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(206,92,0)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[3]}" ) 
@@ -172,9 +172,9 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Yaru";
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru";
 gsettings set org.gnome.shell.extensions.user-theme name "Yaru";
-org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
-org.gnome.shell.extensions.arc-menu distro-icon 'Ubuntu'
-org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(206,92,0)'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu distro-icon 'Ubuntu'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(206,92,0)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[4]}" ) 
@@ -182,9 +182,9 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark";
 gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark";
-org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
-org.gnome.shell.extensions.arc-menu distro-icon 'Fedora'
-org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(114,159,207)'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu distro-icon 'Fedora'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(114,159,207)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[5]}" ) 
@@ -192,9 +192,9 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita";
 gsettings set org.gnome.shell.extensions.user-theme name "Adwaita";
-org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
-org.gnome.shell.extensions.arc-menu distro-icon 'Fedora'
-org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(114,159,207)'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu distro-icon 'Fedora'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(114,159,207)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[6]}" ) 
@@ -202,9 +202,9 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark";
 gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark";
-org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
-org.gnome.shell.extensions.arc-menu distro-icon 'Debian'
-org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(164,0,0)'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu distro-icon 'Debian'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(164,0,0)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 "${options[7]}" ) 
@@ -212,9 +212,9 @@ zenity --info --text="Theme $opt set";;
 gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark";
 gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark";
-org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
-org.gnome.shell.extensions.arc-menu distro-icon 'Debian'
-org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(164,0,0)'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-icon 'Distro_Icon'
+gsettings set org.gnome.shell.extensions.arc-menu distro-icon 'Debian'
+gsettings set org.gnome.shell.extensions.arc-menu menu-button-active-color 'rgb(164,0,0)'
 } > /dev/null 2>&1
 zenity --info --text="Theme $opt set";;
 *) zenity --error --text="Invalid option. Try another one.";;
